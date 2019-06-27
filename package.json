@@ -19,6 +19,6 @@
   "homepage": "https://github.com/josephting/action-test#readme",
   "dependencies": {},
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.8.0"
   }
 }
