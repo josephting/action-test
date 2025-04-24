@@ -15,6 +15,8 @@ jobs:
       - name: Do something
         run: |
           echo "Hello"
+          jq --help
+          echo $?
       - name: Release GitHub
         if: ${{ inputs.release_github }}
         run: |
