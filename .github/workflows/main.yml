@@ -1,0 +1,11 @@
+name: Test
+on: workflow_dispatch
+jobs:
+  publish:
+    environment: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Do something
+        run: |
+          echo "Hello"
