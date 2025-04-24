@@ -18,7 +18,8 @@ jobs:
           jq --help
           echo $?
       - name: Release GitHub
+        uses: ncipollo/release-action@v1
         if: ${{ inputs.release_github }}
-        run: |
-          echo "Release GitHub"
-          env
+        with:
+          name: "Release"
+          token: ${{ secrets.GH_TOKEN }}
