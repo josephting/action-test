@@ -14,12 +14,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Do something
         run: |
-          echo "Hello"
-          jq --help
-          echo $?
+          export version=$(jq -r '.version' package.json)
+          echo "version=$version" >> "$GITHUB_ENV"
+          echo "Releasing $version..."
       - name: Release GitHub
         uses: ncipollo/release-action@v1
         if: ${{ inputs.release_github }}
         with:
           name: "Release"
+          tag: "${{ env.version }}"
           token: ${{ secrets.GH_TOKEN }}
