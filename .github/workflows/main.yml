@@ -1,5 +1,11 @@
 name: Test
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      release_github:
+        type: boolean
+        description: Release on GitHub
+        default: true
 jobs:
   publish:
     environment: Release
