@@ -15,3 +15,8 @@ jobs:
       - name: Do something
         run: |
           echo "Hello"
+      - name: Release GitHub
+        if: ${{ inputs.release_github }}
+        run: |
+          echo "Release GitHub"
+          env
